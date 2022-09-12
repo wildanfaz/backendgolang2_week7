@@ -39,7 +39,7 @@ func PayFood(food chan []string, allMenu [][]string, wg *sync.WaitGroup, mt *syn
 	wg.Done()
 }
 
-func DetailPayment(food chan []string, wg *sync.WaitGroup, mt *sync.RWMutex) {
+func DetailPayment(food <-chan []string, wg *sync.WaitGroup, mt *sync.RWMutex) {
 	menu1, menu2 := <-food, <-food
 	if menu == 1 {
 		price += total
