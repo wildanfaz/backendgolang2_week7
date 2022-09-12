@@ -12,7 +12,7 @@ var total int
 var menu int = 1
 var i int = 0
 
-func PayFood(food chan []string, allMenu [][]string, wg *sync.WaitGroup, mt *sync.RWMutex) {
+func PayFood(food chan<- []string, allMenu [][]string, wg *sync.WaitGroup, mt *sync.RWMutex) {
 	if balance-total > 0 {
 		fmt.Printf("Balance = Rp.%d\n", balance-total)
 	}
