@@ -32,9 +32,6 @@ func PayFood(food chan<- []string, allMenu [][]string, wg *sync.WaitGroup, mt *s
 			total += 5000
 		}
 	}
-	if menu == 2 {
-		close(food)
-	}
 	mt.Unlock()
 	wg.Done()
 }

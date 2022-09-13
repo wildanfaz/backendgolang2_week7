@@ -15,6 +15,7 @@ func main() {
 	chn := make(chan int)
 
 	wg.Add(2)
+	defer close(chn)
 	go golangintermediate.Sum(a[:len(a)/2], chn, wg)
 	fmt.Println("Total =", <-chn)
 	go golangintermediate.Sum(a[len(a)/2:], chn, wg)
@@ -33,6 +34,7 @@ func main() {
 	wg.Add(2)
 	fmt.Println("\nTask 2")
 	fibo := make(chan []int)
+	defer close(fibo)
 	go golangintermediate.FibonacciNumbers(fibo, 40, wg)
 	go golangintermediate.OddEven(fibo, wg)
 	wg.Wait()
@@ -42,7 +44,9 @@ func main() {
 	firstMenu := []string{"Soto Ayam", "Es Teh Manis"}
 	secondMenu := []string{"Soto Babat", "Es Jeruk Manis"}
 	var allMenu [][]string
+
 	allMenu = append(allMenu, firstMenu, secondMenu)
+	defer close(food)
 	for i := 0; i < len(allMenu); i++ {
 		wg.Add(2)
 		mt.Lock()
