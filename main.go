@@ -40,7 +40,7 @@ func main() {
 	wg.Wait()
 
 	fmt.Println("\nTask 3")
-	food := make(chan []string, 2)
+	food := make(chan []string, 5)
 	firstMenu := []string{"Soto Ayam", "Es Teh Manis"}
 	secondMenu := []string{"Soto Babat", "Es Jeruk Manis"}
 	var allMenu [][]string
