@@ -33,7 +33,7 @@ func main() {
 	wg.Add(2)
 	fmt.Println("\nTask 2")
 	fibo := make(chan []int)
-	go golangintermediate.FibonacciNumber(fibo, 40, wg)
+	go golangintermediate.FibonacciNumbers(fibo, 40, wg)
 	go golangintermediate.OddEven(fibo, wg)
 	wg.Wait()
 

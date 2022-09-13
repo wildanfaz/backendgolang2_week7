@@ -5,7 +5,7 @@ import (
 	"sync"
 )
 
-func FibonacciNumber(ch chan<- []int, n int, wg *sync.WaitGroup) {
+func FibonacciNumbers(ch chan<- []int, n int, wg *sync.WaitGroup) {
 	var result []int
 	if n >= 1 {
 		result = append(result, 0, 1)
