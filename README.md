@@ -1,4 +1,4 @@
-# Backend Golang 2 Week 6
+# Backend Golang 2 Week 7
 
 Goroutine, Channel
 
